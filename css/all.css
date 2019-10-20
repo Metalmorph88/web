@@ -42,7 +42,6 @@ body {
     border: 2px inset #d5d1ca;
 }
 
-
 .menu {
     position: fixed;
     top: 10%;
@@ -54,19 +53,6 @@ body {
     border-top: 2px outset gray; 
 }
 
-.auth {
-    position: fixed;
-    top: 0;
-    right: 0px;
-    width: 250px;
-    height: 10%;
-    font-size: 18px;
-    background-color: white;
-    border-left: 2px outset gray;
-}
-
-.auth p {
-}
 
 .menu ul {
     padding: 0px 20px;
@@ -92,12 +78,13 @@ body {
     border: 2px inset gray;
 }
 
-
-#errors {
-    margin: auto;
-    bottom:0px;
+.auth {
+    position: fixed;
+    top: 0;
+    right: 0px;
     width: 250px;
-    height: auto;
+    height: 10%;
+    font-size: 18px;
+    background-color: white;
+    border-left: 2px outset gray;
 }
-
-

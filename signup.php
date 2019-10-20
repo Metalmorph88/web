@@ -10,10 +10,7 @@
 
 <?php 
 	require 'db.php';
-
 	$data = $_POST;
-
-
 	//если кликнули на button
 	if ( isset($data['do_signup']) )
 	{
@@ -23,24 +20,19 @@
 		{
 			$errors[] = 'Введите логин';
 		}
-
 		if ( $data['password'] == '' )
 		{
 			$errors[] = 'Введите пароль';
 		}
-
 		if ( $data['password_2'] != $data['password'] )
 		{
 			$errors[] = 'Повторный пароль введен не верно!';
 		}
-
 		//проверка на существование одинакового логина
 		if ( R::count('users', "login = ?", array($data['login'])) > 0)
 		{
 			$errors[] = 'Пользователь с таким логином уже существует!';
 		}
-    
-
 		if ( empty($errors) )
 		{
 			//ошибок нет, теперь регистрируем
@@ -56,9 +48,7 @@
 		{
 			echo '<div id="errors" style="color:red;">' .array_shift($errors). '</div><hr>';
 		}
-
 	}
-
 ?>
 <div class='login'>
 	<div class='logo'>

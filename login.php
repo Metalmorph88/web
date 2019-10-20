@@ -10,7 +10,6 @@
 
 <?php 
 	require 'db.php';
-
 	$data = $_POST;
 	if ( isset($data['do_login']) )
 	{
@@ -23,27 +22,21 @@
 				//если пароль совпадает, то нужно авторизовать пользователя
 				$_SESSION['logged_user'] = $user;
 				echo '<div>Вы авторизованы!<br/> Можете перейти на <a href="/">главную</a> страницу.<br>Автоматический переход через 3 секунды</div><hr>';
-				
-				header('Refresh: 3; URL=mk.php'); 
-				
+				header('Refresh: 3; URL=index.php'); 
 			}else
 			{
 				$errors[] = 'Неверно введен пароль!';
 			}
-
 		}else
 		{
 			$errors[] = 'Пользователь с таким логином не найден!';
 		}
-		
 		if ( ! empty($errors) )
 		{
 			//выводим ошибки авторизации
-			echo '<div id="errors">' .array_shift($errors). '</div><hr>';
+			echo '<div>' .array_shift($errors). '</div><hr>';
 		}
-
 	}
-
 ?>
 
 
