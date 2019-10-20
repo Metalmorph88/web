@@ -19,10 +19,8 @@
             ?>!</p>
         <a href="logout.php">Выйти</a>
 
-<?php else : ?>
-Вы не авторизованы<br/>
-<a href='login.php'>Авторизация</a>
-<a href='signup.php'>Регистрация</a>
+
+<?php else : header("Location:login.php"); ?>
 <?php endif; ?>
 
 
