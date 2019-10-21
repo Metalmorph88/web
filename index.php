@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<iframe class='workplace' name='workplace' width='100%' height='100%' frameborder='no' seamless>
+<iframe src='add_cost.php' class='workplace' name='workplace' width='100%' height='100%' frameborder='no'>
 </iframe>
     
 <div class='auth'>
