@@ -48,9 +48,9 @@
         </div>
         <form  action="login.php" method="POST">
             
-            <input type="text" name="login" placeholder='Логин'><br/>
+            <input type="text" name="login" placeholder='Логин' value="<?php echo @$data['login']; ?>"><br/>
 
-            <input type="password" name="password" placeholder='Пароль'><br/>
+            <input type="password" name="password" placeholder='Пароль' value="<?php echo @$data['password']; ?>"><br/>
 
             <button type="submit" name="do_login">Войти</button>
         </form>

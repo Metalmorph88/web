@@ -42,11 +42,11 @@
 			$user->surname = $data['surname'];
 			$user->password = password_hash($data['password'], PASSWORD_DEFAULT); //пароль нельзя хранить в открытом виде, мы его шифруем при помощи функции password_hash для php > 5.6
 			R::store($user);
-			echo '<div style="color:green;">Вы успешно зарегистрированы! Можете перейти на страницу <a href="/">авторизации</a>.<br>Автоматический переход через 3 секунды.</div><hr>';
+			echo '<div>Вы успешно зарегистрированы! Можете перейти на страницу <a href="/">авторизации</a>.<br>Автоматический переход через 3 секунды.</div><hr>';
 			header('Refresh: 3; URL=login.php'); 
 		}else
 		{
-			echo '<div id="errors" style="color:red;">' .array_shift($errors). '</div><hr>';
+			echo '<div>' .array_shift($errors). '</div><hr>';
 		}
 	}
 ?>
@@ -57,15 +57,15 @@
             </a>
         </div>
 <form action="/signup.php" method="POST">
-	<input type="text" name="login" placeholder='Логин'><br/>
+	<input type="text" name="login" placeholder='Логин' value="<?php echo @$data['login']; ?>"><br/>
 
-	<input type="password" name="password" placeholder='Пароль'><br/>
+	<input type="password" name="password" placeholder='Пароль' value="<?php echo @$data['password']; ?>"><br/>
 
-	<input type="password" name="password_2" placeholder='Повторите пароль'><br/>
+	<input type="password" name="password_2" placeholder='Повторите пароль' value="<?php echo @$data['password_2']; ?>"><br/>
 
-        <input type="text" name="name" placeholder='Имя'><br/>
+        <input type="text" name="name" placeholder='Имя' value="<?php echo @$data['name']; ?>"><br/>
 
-        <input type="text" name="surname" placeholder='Фамилия'><br/>
+        <input type="text" name="surname" placeholder='Фамилия' value="<?php echo @$data['surname']; ?>"><br/>
 
 	<button type="submit" name="do_signup">Регистрация</button>
 
