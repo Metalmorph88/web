@@ -54,6 +54,10 @@
 
             <button type="submit" name="do_login">Войти</button>
         </form>
+        <form action='signup.php'>
+            <button type='submit'>Регистрация</button>
+        </form>
+            
     </div>
 </body>
 </html>
