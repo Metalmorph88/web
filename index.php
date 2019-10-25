@@ -18,42 +18,8 @@
             <img src="img/logo.jpg">
         </div>
         <div class='stats'>
-            <table>
-                <th style="background-color:LightGreen">Доход</th>
-                <th style="background-color:Coral">Расход</th>
-                <th style="background-color:SkyBlue">Баланс</th>
-                <tr>
-                    <td style="background-color:Honeydew">  
-                            <?php                
-                                $query1 ="select sum(cost) from material where groupid in (select id from category where type ='+')";
-
-                                $in = mysqli_query($link, $query1) or die("Ошибка " . mysqli_error($link)); 
-                                if($in)
-                                {
-                                        $row1 = mysqli_fetch_row($in);
-                                            echo $row1[0];
-                                }
-                            ?>
-                    </td>
-                    <td style="background-color:AntiqueWhite">  
-                            <?php                
-                                $query2 ="select sum(cost) from material where groupid in (select id from category where type ='-')";
-
-                                $out = mysqli_query($link, $query2) or die("Ошибка " . mysqli_error($link)); 
-                                if($out)
-                                {
-                                        $row2 = mysqli_fetch_row($out);
-                                            echo $row2[0];
-                                }
-                            ?>
-                    </td>
-                    <td style="background-color:LightCyan">  
-                            <?php 
-                                echo $row1[0]-$row2[0];
-                            ?>
-                    </td>
-                </tr>
-            </table>
+            <iframe name='short_stat' height='100%' width=100% frameborder='0' src="show_stats_short.php">
+            </iframe>
         </div>
         <div class='auth'>
                 <?php 
@@ -86,12 +52,15 @@
     </div>
     <div class='center'>
         
-        
-        
         <div class='workplace'>
-            <iframe name='workplace' height='100%' width=100% frameborder='0'>
+            <iframe name='workplace' height='100%' width=100% frameborder='0' src='show_stats_month.php'>
+
             </iframe>
         </div>
+        
+        
+        
+        
     </div>
 
     <div class='right'>
@@ -104,11 +73,11 @@
                 <li><a href='add_category.php' target='form'>Добавить категорию</a></li>
                 <li><a href='add_cost.php' target='form'>Добавить запись</a></li>
                 <br>
-                <li><a href='show.php' target='workplace'>Статистика</a></li>
-                <li><a href='show.php' target='workplace'>Пользователи</a></li>
+                <li><a href='show_pay.php' target='workplace'>Доходы</a></li>
                 <li><a href='show_cost.php' target='workplace'>Расходы</a></li>
-                <li><a href='show.php' target='workplace'>Доходы</a></li>
-                <li><a href='show.php' target='workplace'>Категории</a></li>
+                <li><a href='show_stats.php' target='workplace'>Статистика</a></li>
+                <li><a href='show_category.php' target='workplace'>Категории</a></li>
+                <li><a href='show_users.php' target='workplace'>Пользователи</a></li>
             </ul>
         </div>
     </div>
@@ -117,3 +86,6 @@
         ?>
 </body>
 </html>
+
+
+                                

@@ -73,16 +73,3 @@
 </div>
 </body>
 </html>
-                            <?php                
-                                $query3 ="select distinct (select sum(cost) from material where groupid in (select id from category where type ='+')) - (select sum(cost) from material where groupid in (select id from category where type ='-')) from material;";
-
-                                $balance = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
-                                if($balance)
-                                {
-                                        $row = mysqli_fetch_row($balance);
-                                            echo "$row[0]";
-                                            echo $query1-$query2;
-                                // очищаем результат
-                                mysqli_free_result($balance);
-                                }
-                            ?>
