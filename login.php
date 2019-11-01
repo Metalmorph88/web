@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Money Keeper</title>
-    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -41,21 +42,19 @@
 
 
 <div class='login'>
-        <div class='logo'>
-            <a href='index.php'>
-                <img src="img/logo.jpg">        
-            </a>
-        </div>
+        <a href='index.php'>
+            <img src="img/logo.jpg">        
+        </a>
         <form  action="login.php" method="POST">
             
-            <input type="text" name="login" placeholder='Логин' value="<?php echo @$data['login']; ?>"><br/>
+            <input type="text" name="login" placeholder='Login' required value="<?php echo @$data['login']; ?>"><br/>
 
-            <input type="password" name="password" placeholder='Пароль' value="<?php echo @$data['password']; ?>"><br/>
+            <input type="password" name="password" placeholder='Password' required value="<?php echo @$data['password']; ?>"><br/>
 
-            <button type="submit" name="do_login">Войти</button>
+            <button type="submit" name="do_login">Sign In</button>
         </form>
         <form action='signup.php'>
-            <button type='submit'>Регистрация</button>
+            <button type='submit'>Sign Up</button>
         </form>
             
     </div>

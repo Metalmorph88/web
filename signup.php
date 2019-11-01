@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Money Keeper</title>
-    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -51,23 +52,23 @@
 	}
 ?>
 <div class='login'>
-	<div class='logo'>
+	<div>
             <a href='index.php'>
 		<img src="img/logo.jpg">
             </a>
         </div>
 <form action="/signup.php" method="POST">
-	<input type="text" name="login" placeholder='Логин' value="<?php echo @$data['login']; ?>"><br/>
+	<input type="text" name="login" placeholder='Login' required value="<?php echo @$data['login']; ?>"><br/>
 
-	<input type="password" name="password" placeholder='Пароль' value="<?php echo @$data['password']; ?>"><br/>
+	<input type="password" name="password" placeholder='Password' required value="<?php echo @$data['password']; ?>"><br/>
 
-	<input type="password" name="password_2" placeholder='Повторите пароль' value="<?php echo @$data['password_2']; ?>"><br/>
+	<input type="password" name="password_2" placeholder='Retype password' required value="<?php echo @$data['password_2']; ?>"><br/>
 
-        <input type="text" name="name" placeholder='Имя' value="<?php echo @$data['name']; ?>"><br/>
+        <input type="text" name="name" placeholder='Name' value="<?php echo @$data['name']; ?>"><br/>
 
-        <input type="text" name="surname" placeholder='Фамилия' value="<?php echo @$data['surname']; ?>"><br/>
+        <input type="text" name="surname" placeholder='Surname' value="<?php echo @$data['surname']; ?>"><br/>
 
-	<button type="submit" name="do_signup">Регистрация</button>
+	<button type="submit" name="do_signup">Sign Up</button>
 
 </form>
 </div>
